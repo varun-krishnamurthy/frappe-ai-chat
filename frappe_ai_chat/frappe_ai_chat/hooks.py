@@ -39,8 +39,8 @@ app_license = "MIT"
 # webform_include_js = {"doctype": "public/js/doctype.js"}
 # webform_include_css = {"doctype": "public/css/doctype.css"}
 
-# include js in page
-# page_js = {"page" : "/ai-chat"}
+include js in page
+page_js = {"ai-chat" : "/assets/frappe_ai_chat/js/ai-chat-bundle.js"}
 
 # include js in doctype views
 # doctype_js = {"doctype" : "Chat Session"}
