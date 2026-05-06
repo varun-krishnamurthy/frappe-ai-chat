@@ -1,0 +1,72 @@
+{
+	"doctype": "DocType",
+	"name": "Chat Session",
+	"module": "Frappe AI Chat",
+	"autoname": "chat-session-.YYYY.-",
+	"title_field": "user",
+	"search_fields": "user",
+	"fields": [
+		{
+			"fieldname": "user",
+			"label": "User",
+			"fieldtype": "Link",
+			"options": "User",
+			"reqd": 1,
+			"default": " frappe.session.user"
+		},
+		{
+			"fieldname": "start_time",
+			"label": "Start Time",
+			"fieldtype": "Datetime",
+			"reqd": 1,
+			"default": "now"
+		},
+		{
+			"fieldname": "end_time",
+			"label": "End Time",
+			"fieldtype": "Datetime"
+		},
+		{
+			"fieldname": "status",
+			"label": "Status",
+			"fieldtype": "Select",
+			"options": "Open\nClosed\nArchived",
+			"default": "Open"
+		},
+		{
+			"fieldname": "model",
+			"label": "AI Model",
+			"fieldtype": "Select",
+			"options": "gpt-3.5-turbo\ngpt-4\ngpt-4-turbo\nclaude-3-opus\nclaude-3-sonnet\nclaude-3-haiku",
+			"default": "gpt-3.5-turbo"
+		},
+		{
+			"fieldname": "temperature",
+			"label": "Temperature",
+			"fieldtype": "Float",
+			"default": 0.7
+		},
+		{
+			"fieldname": "max_tokens",
+			"label": "Max Tokens",
+			"fieldtype": "Int",
+			"default": 1000
+		}
+	],
+	"permissions": [
+		{
+			"role": "System Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1
+		},
+		{
+			"role": "All",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 0
+		}
+	]
+}

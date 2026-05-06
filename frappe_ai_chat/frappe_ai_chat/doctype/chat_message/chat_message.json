@@ -1,0 +1,64 @@
+{
+	"doctype": "DocType",
+	"name": "Chat Message",
+	"module": "Frappe AI Chat",
+	"autoname": "chat-msg-.YYYY.-",
+	"title_field": "content",
+	"fields": [
+		{
+			"fieldname": "session",
+			"label": "Session",
+			"fieldtype": "Link",
+			"options": "Chat Session",
+			"reqd": 1
+		},
+		{
+			"fieldname": "role",
+			"label": "Role",
+			"fieldtype": "Select",
+			"options": "User\nAssistant\nSystem",
+			"reqd": 1
+		},
+		{
+			"fieldname": "content",
+			"label": "Content",
+			"fieldtype": "Long Text",
+			"reqd": 1
+		},
+		{
+			"fieldname": "timestamp",
+			"label": "Timestamp",
+			"fieldtype": "Datetime",
+			"reqd": 1,
+			"default": "now"
+		},
+		{
+			"fieldname": "tokens_used",
+			"label": "Tokens Used",
+			"fieldtype": "Int"
+		},
+		{
+			"fieldname": "metadata",
+			"label": "Metadata",
+			"fieldtype": "JSON"
+		}
+	],
+	"permissions": [
+		{
+			"role": "System Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1
+		},
+		{
+			"role": "All",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 0
+		}
+	],
+	"sort_field": "timestamp",
+	"sort_order": "ASC"
+}

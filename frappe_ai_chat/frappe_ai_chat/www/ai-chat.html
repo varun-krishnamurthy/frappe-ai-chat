@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Chat</title>
+    <!-- Frappe will include the necessary CSS and JS -->
+</head>
+<body>
+    <div id="ai-chat-app"></div>
+    <script>
+        // This will be replaced by the Vue app
+        frappe.require("assets/frappe_ai_chat/js/ai-chat-bundle.js", function() {
+            // Initialize the Vue app
+            new frappe.ai_chat.App({
+                target: document.getElementById('ai-chat-app')
+            });
+        });
+    </script>
+</body>
+</html>
